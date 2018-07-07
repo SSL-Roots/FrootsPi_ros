@@ -1,0 +1,5 @@
+<launch>
+    <node name="hello_world" pkg="frootspi_hello_world" type="hello_world.py" required="true" />
+    <test test-name="test_hello_world" pkg="frootspi_hello_world" type="test_hello_world.py" />
+
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <node name="hello_world" pkg="frootspi_hello_world" type="hello_world.py" required="true" />
+
+</launch>
