@@ -5,8 +5,8 @@ ROS packages on Raspberry Pi for RoboCup SSL Robot
 - [x] Create this repository
 - [x] Create hello world code
 - [x] Create simple node test code
-- [ ] Create simple library test code
-- [ ] Simple travis-ci test succeeded
+- [x] Create simple library test code
+- [x] Simple travis-ci test succeeded
 - [ ] Create blank ROS packages
 - [ ] Each ROS nodes' test succeeded
 - [ ] Integrated tests succeeded
