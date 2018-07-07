@@ -1,7 +1,7 @@
 # FrootsPi
 ROS packages on Raspberry Pi for RoboCup SSL Robot
 
-## Staus
+## Status
 - [x] Create this repository
 - [ ] Create hello world code
 - [ ] Create simple test code
