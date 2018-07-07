@@ -1,0 +1,11 @@
+sudo: required
+dist: trusty
+
+before_install:
+- bash -xve ./test_scripts/travis_ros_install.bash
+- source ~/catkin_ws/devel/setup.bash
+install:
+- bash -xve ./test_scripts/travis_build_frootspi.bash
+- source ~/catkin_ws/devel/setup.bash
+script:
+- bash -xve ./test_scripts/travis_script.bash
