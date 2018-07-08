@@ -29,16 +29,24 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
   - Our team's mechanic / electric cad data here -> ( )
 
 ## Installation
-- ROS Install
-  - Ganbatte!!!
+
+### ROS Install
+Ganbatte!!!
   
-- FrootsPi Install
+### FrootsPi Install
 
 ```zsh
   $ git clone https://github.com/SSL-Roots/FrootsPi ~/catkin_ws/src/FrootsPi
 
   $ cd ~/catkin_ws
   $ catkin_make
+```
+
+### Raspberry Pi Settings
+You have to enable interfaces **i2c**, **spi**.
+
+```zsh
+  $ sudo raspi-config
 ```
 
 ## How to write test code
