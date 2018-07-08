@@ -242,6 +242,11 @@ Example: *frootspi_hello_world/CMakeLists.txt*
   $ catkin_make run_tests_frootspi_hello_world_nosetests_scripts.tests.test_hello.py
 ```
 
+## References
+
+- [Roots mbed program](https://os.mbed.com/users/alt0710/code/Roots/)
+
+
 ## Author
 
 **Roots** : A RoboCup SSL team on Japan -> [*Roots Home*](https://github.com/SSL-Roots/Roots_home/wiki)
