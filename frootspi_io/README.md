@@ -1,6 +1,6 @@
 # FrootsPI IO
 
-IO Receiver, Sender of FrootsPi
+Information IO Controller of FrootsPi
 
 ## Pin Assignments
 
@@ -11,3 +11,12 @@ IO Receiver, Sender of FrootsPi
 |35|GPIO 19|SPI1 MISO|
 |38|GPIO 20|SPI1 MOSI|
 |40|GPIO 21|SPI1 SCLK|
+|18|GPIO 24|DIGITAL OUT (SPI CS IO)|
+|22|GPIO 25|DIGITAL OUT (SPI CS ACCEL)|
+|24|GPIO 8 |DIGITAL OUT (SPI CS AD)|
+|11|GPIO 17|DIGITAL IN (BALL SENSOR IN)|
+|12|GPIO 18|DIGITAL IN (SHUTDOWN SW)|
+
+
+
+- FrootsPi has 3 SPI slave modules and uses 3 GPIO pins as SPI1 CS
