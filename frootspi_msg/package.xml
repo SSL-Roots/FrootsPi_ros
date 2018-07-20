@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>frootspi_msg</name>
+  <version>0.0.0</version>
+  <description>The frootspi_msg package</description>
+
+  <maintainer email="macakasit@gmail.com">ShotaAk</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_generation</exec_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+</package>
