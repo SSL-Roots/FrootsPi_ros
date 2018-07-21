@@ -13,6 +13,12 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
 - [x] Simple travis-ci test succeeded
 - [x] Create blank ROS packages
 - [ ] Each ROS nodes' test succeeded
+  - [ ] Core
+  - [x] Dribbler
+  - [x] HelloWorld
+  - [ ] IO
+  - [ ] Kicker
+  - [ ] VelocityConverter
 - [ ] Integrated tests succeeded
 - [ ] FrootsPi robot power on
 - [ ] FrootsPi robot correctly moved! :)
