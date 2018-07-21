@@ -10,7 +10,11 @@ Dribble motor controller
 |31|GPIO 6 |DIGITAL OUT (DRIBBLE LOW SIDE)|
 |13|GPIO 27|DIGITAL IN (DRIBBLE FAULT)|
 
-## Sub & Pub
+## Pub & Sub
+
+### Publish
+
+None
 
 ### Subscribe
 
@@ -18,9 +22,6 @@ Dribble motor controller
   - bool *dribble_flag*
   - int *dribble_power*
   
-### Publish
-
-None
 
 ## Function
 
