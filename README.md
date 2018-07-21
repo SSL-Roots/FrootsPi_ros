@@ -11,7 +11,7 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
 - [x] Create simple node test code
 - [x] Create simple library test code
 - [x] Simple travis-ci test succeeded
-- [ ] Create blank ROS packages
+- [x] Create blank ROS packages
 - [ ] Each ROS nodes' test succeeded
 - [ ] Integrated tests succeeded
 - [ ] FrootsPi robot power on
@@ -52,7 +52,8 @@ You have to enable interfaces **i2c**, **spi**.
 ### pigpio Install
 
 pigpio is a C/python library for Raspberry Pi control GPIO.
-Refere to bellow link and install pigpio library.
+
+Refere to below link and install pigpio library.
 
 http://abyz.me.uk/rpi/pigpio/download.html
 
