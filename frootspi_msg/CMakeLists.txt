@@ -7,7 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(
   FILES
-  froots_command.msg
+  FrootsCommand.msg
 )
 
 generate_messages(

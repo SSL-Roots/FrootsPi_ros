@@ -49,6 +49,48 @@ You have to enable interfaces **i2c**, **spi**.
   $ sudo raspi-config
 ```
 
+### pigpio Install
+
+pigpio is a C/python library for Raspberry Pi control GPIO.
+Refere to bellow link and install pigpio library.
+
+http://abyz.me.uk/rpi/pigpio/download.html
+
+
+## How to run FrootsPi
+
+### Run a FrootsPi node
+
+```zsh
+  # Start the pigpio daemon
+  $ sudo pigpiod 
+
+  $ roscore
+
+  # In other terminal
+  $ rosrun frootspi_dribbler dribbler_node.py
+  
+  ...
+
+  # Stop the pigpio daemon
+  $ sudo killall pigpiod
+```
+
+
+### Launch FrootsPi nodes
+
+```zsh
+  
+  # Start the pigpio daemon
+  $ sudo pigpiod 
+
+  # launch code coming soon
+  ...
+
+  # Stop the pigpio daemon
+  $ sudo killall pigpiod
+```
+
 ## How to write test code
 
 ### Node test
