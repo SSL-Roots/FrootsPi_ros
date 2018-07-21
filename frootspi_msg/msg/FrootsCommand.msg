@@ -3,7 +3,7 @@ float32 vel_theta
 float32 vel_omega
 
 bool dribble_flag
-float32 dribble_power
+int32 dribble_power
 
 bool kick_flag
 float32 kick_power
