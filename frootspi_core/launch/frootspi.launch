@@ -21,5 +21,6 @@
 
     <!-- Main nodes -->
     <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" required="true" />
+    <node name="frootspi_kicker" pkg="frootspi_kicker" type="kicker_node.py" required="true" />
 
 </launch>
