@@ -39,6 +39,12 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
 
 ### ROS Install
 Ganbatte!!!
+
+### Install Libraries
+
+```zsh
+  $ sudo apt install ros-kinetic-joy
+```
   
 ### FrootsPi Install
 
