@@ -6,6 +6,7 @@ bool dribble_flag
 int32 dribble_power
 
 bool kick_flag
-float32 kick_power
+int32 kick_power
 bool chip_enable
+bool charge_enable
 
