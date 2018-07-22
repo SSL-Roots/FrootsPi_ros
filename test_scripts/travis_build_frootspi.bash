@@ -1,7 +1,7 @@
 #!/bin/bash -xve
 
 # Install packages
-# sudo apt -y install something ...
+sudo apt -y install ros-indigo-joy
 
 # Build FrootsPi
 rsync -av ./ ~/catkin_ws/src/FrootsPi
