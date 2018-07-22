@@ -24,6 +24,9 @@ class Core(object):
         self._dribble_power = 6
         self._dribble_MAX = 15
 
+        self._kick_power = 6
+        self._kick_MAX = 15
+
 
     def _callback_joy(self, msg):
         command = FrootsCommand()
@@ -39,6 +42,22 @@ class Core(object):
             command.dribble_flag = False
             command.dribble_power = 0
 
+        # Kick command update
+        if msg.buttons[self._SEL]:
+            command.charge_enable = True
+        else:
+            command.charge_enable = False
+
+        if msg.buttons[self._A]:
+            self._kick_power = self._kick_power_control(
+                    msg, self._kick_power)
+
+            command.kick_flag = True
+            command.kick_power = self._kick_power
+        else:
+            command.kick_flag = False
+            command.kick_power = 0
+
         self._pub_command.publish(command)
 
 
@@ -53,6 +72,19 @@ class Core(object):
         elif dribble_power < 0:
             dribble_power = 0
         return dribble_power
+
+
+    def _kick_power_control(self, joy_msg, kick_power):
+        if joy_msg.buttons[self._X]:
+            kick_power += 1
+        elif joy_msg.buttons[self._B]:
+            kick_power -= 1
+
+        if kick_power > self._kick_MAX:
+            kick_power = self._kick_MAX
+        elif kick_power < 0:
+            kick_power = 0
+        return kick_power 
 
 
     def shutdown(self):
