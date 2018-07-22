@@ -9,9 +9,17 @@
         <param name="dev" type="string" value="/dev/input/js0" />
             </node>
         <node name="frootspi_joy" pkg="frootspi_joy" type="joy_node.py" />
+        <param name="frootspi_joy/button_A" value="0" type="int" />
+        <param name="frootspi_joy/button_B" value="1" type="int" />
+        <param name="frootspi_joy/button_X" value="2" type="int" />
+        <param name="frootspi_joy/button_Y" value="3" type="int" />
+        <param name="frootspi_joy/button_L" value="4" type="int" />
+        <param name="frootspi_joy/button_R" value="5" type="int" />
+        <param name="frootspi_joy/button_SEL" value="6" type="int" />
+        <param name="frootspi_joy/button_START" value="7" type="int" />
     </group>
 
     <!-- Main nodes -->
-    <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" />
+    <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" required="true" />
 
 </launch>
