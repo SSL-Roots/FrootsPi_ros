@@ -19,6 +19,7 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
   - [ ] IO
   - [ ] Kicker
   - [ ] VelocityConverter
+  - [ ] Joy
 - [ ] Integrated tests succeeded
 - [ ] FrootsPi robot power on
 - [ ] FrootsPi robot correctly moved! :)
@@ -63,6 +64,13 @@ Refere to below link and install pigpio library.
 
 http://abyz.me.uk/rpi/pigpio/download.html
 
+### Joystick settings (Optional)
+
+You can control FrootsPi with joystick.
+
+Refere to below link and setup your joystick.
+
+http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick
 
 ## How to run FrootsPi
 
@@ -91,8 +99,11 @@ http://abyz.me.uk/rpi/pigpio/download.html
   # Start the pigpio daemon
   $ sudo pigpiod 
 
-  # launch code coming soon
-  ...
+  # Launch nodes
+  $ roslaunch frootspi_core frootspi.launch
+
+  # or Launch node with joystick controller
+  $ roslaunch frootspi_core frootspi.launch joy:=true
 
   # Stop the pigpio daemon
   $ sudo killall pigpiod
