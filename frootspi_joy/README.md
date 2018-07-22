@@ -2,9 +2,23 @@
 
 (Joystick) Gamepad Controller to send FrootsCommand
 
-## Pin Assignments
+## Key Config
 
-None
+|Button index|Key|Function|
+|:---:|:---:|:---|
+|0|A|None|
+|1|B|Parameter down|
+|2|X|Parameter up|
+|3|Y|Dribble|
+|4|L|None|
+|5|R|None|
+|6|SELECT|None|
+|7|START|None|
+
+|Axes index|Key|Function|
+|:---:|:---:|:---|
+|0|None|None|
+|1|None|None|
 
 ## Pub & Sub
 
@@ -18,19 +32,11 @@ None
 
 ## Function
 
-FrootsPi Joyは
+FrootsPi Joyは...
 
 ## Specification
 
-- DRIBBLE PWM HIGH SIDE
-  - 周波数: 10 kHz
-  - Duty: 0 ~ 100 % を16段階に分割
-- DRIBBLE LOW SIDE
-  - OFF : ハーフブリッジのLow側をOFF
-  - ON  : ハーフブリッジのHi側をON
-- DRIBBLE FAULT
-  - LOW : モータ過電流を検知
-  - HIGH  : 異常なし
+None
 
 ## Caution
 
