@@ -72,6 +72,14 @@ You **must** install pigpio with zip file. Not *apt-get install pigpio*
 
 http://abyz.me.uk/rpi/pigpio/download.html
 
+```zsh
+  wget abyz.me.uk/rpi/pigpio/pigpio.zip
+  unzip pigpio.zip
+  cd PIGPIO
+  make
+  sudo make install
+```
+
 ### Joystick settings (Optional)
 
 You can control FrootsPi with joystick.
