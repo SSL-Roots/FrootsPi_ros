@@ -1,26 +1,30 @@
 <launch>
     <arg name="joy" default="false" />
+    <arg name="charge_off" default="false" />
     <!-- Test Node -->
     <!-- <node name="hello_world" pkg="frootspi_hello_world" type="hello_world.py" required="true" /> -->
 
     <!-- Joy nodes -->
     <group if="$(arg joy)">
         <node name="joy_core" pkg="joy" type="joy_node" >
-        <param name="dev" type="string" value="/dev/input/js0" />
-            </node>
-        <node name="frootspi_joy" pkg="frootspi_joy" type="joy_node.py" />
-        <param name="frootspi_joy/button_A" value="0" type="int" />
-        <param name="frootspi_joy/button_B" value="1" type="int" />
-        <param name="frootspi_joy/button_X" value="2" type="int" />
-        <param name="frootspi_joy/button_Y" value="3" type="int" />
-        <param name="frootspi_joy/button_L" value="4" type="int" />
-        <param name="frootspi_joy/button_R" value="5" type="int" />
-        <param name="frootspi_joy/button_SEL" value="6" type="int" />
-        <param name="frootspi_joy/button_START" value="7" type="int" />
+            <param name="dev" type="string" value="/dev/input/js0" />
+        </node>
+        <node name="frootspi_joy" pkg="frootspi_joy" type="joy_node.py" >
+            <param name="button_A" value="0" type="int" />
+            <param name="button_B" value="1" type="int" />
+            <param name="button_X" value="2" type="int" />
+            <param name="button_Y" value="3" type="int" />
+            <param name="button_L" value="4" type="int" />
+            <param name="button_R" value="5" type="int" />
+            <param name="button_SEL" value="6" type="int" />
+            <param name="button_START" value="7" type="int" />
+        </node>
     </group>
 
     <!-- Main nodes -->
     <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" required="true" />
-    <node name="frootspi_kicker" pkg="frootspi_kicker" type="kicker_node.py" required="true" />
+    <node name="frootspi_kicker" pkg="frootspi_kicker" type="kicker_node.py" required="true" >
+        <param name="charge_off" value="$(arg charge_off)" type="bool" />
+    </node>
 
 </launch>
