@@ -27,6 +27,12 @@ class Core(object):
         self._kick_power = 6
         self._kick_MAX = 15
 
+        self._command = FrootsCommand()
+
+
+    def publish(self):
+        self._pub_command.publish(self._command)
+
 
     def _callback_joy(self, msg):
         command = FrootsCommand()
@@ -58,7 +64,7 @@ class Core(object):
             command.kick_flag = False
             command.kick_power = 0
 
-        self._pub_command.publish(command)
+        self._command = command
 
 
     def _dribble_power_control(self, joy_msg, dribble_power):
@@ -99,7 +105,12 @@ def main():
 
     rospy.on_shutdown(core.shutdown)
 
-    rospy.spin()
+    r = rospy.Rate(60)
+
+    while not rospy.is_shutdown():
+        core.publish()
+
+        r.sleep()
 
 
 if __name__ == '__main__':
