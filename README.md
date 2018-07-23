@@ -40,7 +40,7 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
 ### ROS Install
 Ganbatte!!!
 
-### Install Libraries
+### Libraries Install
 
 ```zsh
   $ sudo apt install ros-kinetic-joy
@@ -67,6 +67,8 @@ You have to enable interfaces **i2c**, **spi**.
 pigpio is a C/python library for Raspberry Pi control GPIO.
 
 Refere to below link and install pigpio library.
+
+You **must** install pigpio with zip file. Not *apt-get install pigpio*
 
 http://abyz.me.uk/rpi/pigpio/download.html
 
