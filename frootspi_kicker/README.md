@@ -29,7 +29,7 @@ None
 
 ## Parameter
 
-- bool *kicker/CHARGE_OFF*
+- bool *frootspi_kicker/charge_off*
 
 ## Function
 
