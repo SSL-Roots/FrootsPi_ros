@@ -17,7 +17,7 @@ Raspberry Pi + Roots -> **F**ruits(Raspberry) **Pi** + **Roots** -> **FrootsPi**
   - [x] Dribbler
   - [x] HelloWorld
   - [ ] IO
-  - [ ] Kicker
+  - [x] Kicker
   - [ ] VelocityConverter
   - [ ] Joy
 - [ ] Integrated tests succeeded
