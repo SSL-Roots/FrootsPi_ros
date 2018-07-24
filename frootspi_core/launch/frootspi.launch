@@ -21,10 +21,12 @@
         </node>
     </group>
 
+
     <!-- Main nodes -->
     <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" required="true" />
     <node name="frootspi_kicker" pkg="frootspi_kicker" type="kicker_node.py" required="true" >
         <param name="charge_off" value="$(arg charge_off)" type="bool" />
+        <rosparam command="load" file="$(find frootspi_core)/param/kick_power.yaml" />
     </node>
 
 </launch>

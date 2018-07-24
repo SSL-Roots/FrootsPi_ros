@@ -26,6 +26,9 @@ class Core(object):
         self._pi.set_mode(self._GPIO_CHARGING, pigpio.OUTPUT)
 
         self._CHARGE_OFF = rospy.get_param('~charge_off')
+        self._STRAIGHT_KICK_POWER = rospy.get_param('~straight_kick_power')
+        self._CHIP_KICK_POWER = rospy.get_param('~chip_kick_power')
+        self._KICK_POWER_MAX = 15
 
         self._sub_command = rospy.Subscriber('froots_command', FrootsCommand,
                 self._callback_command)
@@ -57,14 +60,29 @@ class Core(object):
         if command.kick_flag and \
                 self._pi.read(self._GPIO_CHARGE_DONE) == pigpio.LOW and \
                 self._pi.read(self._GPIO_BALL_SENSOR) == pigpio.LOW:
-            target = self._GPIO_STRAIGHT
-            if command.chip_enable:
-                target = self._GPIO_CHIP
+
+            target, output_time = self._convert_kick_power(command)
 
             self._pi.write(target, pigpio.HIGH)
-            # 0.025 ~ 0.04
-            time.sleep(0.04)
+            time.sleep(output_time)
             self._pi.write(target, pigpio.LOW)
+
+
+    def _convert_kick_power(self, command):
+        kick_power = command.kick_power
+        if kick_power > self._KICK_POWER_MAX:
+            kick_power = self._KICK_POWER_MAX
+        if kick_power < 0:
+            kick_power = 0
+
+        target = self._GPIO_STRAIGHT
+        output_time = self._STRAIGHT_KICK_POWER[kick_power]
+
+        if command.chip_enable:
+            target = self._GPIO_CHIP
+            output_time = self._CHIP_KICK_POWER[kick_power]
+
+        return target, output_time
 
 
     def shutdown(self):
