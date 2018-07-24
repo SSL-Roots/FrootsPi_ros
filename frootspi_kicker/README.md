@@ -80,5 +80,6 @@ kick_power=15で、0.04 sec間キック信号をONにしてください。
 
 ## Caution
 
+- 26 Pin (STRAIGHT KICK) はSPI0のCE1機能がデフォルトのため、電源ONでHi出力になります。
 - STRAIGHT KICK、CHIP KICKを常時ONにしないこと
 
