@@ -50,9 +50,9 @@ class Core(object):
 
         # Kick command update
         if msg.buttons[self._SEL]:
-            command.charge_enable = True
+            command.charge_flag = True
         else:
-            command.charge_enable = False
+            command.charge_flag = False
 
         if msg.buttons[self._A]:
             self._kick_power = self._kick_power_control(

@@ -25,7 +25,7 @@ None
   - bool *kick_flag*
   - int32 *kick_power*
   - bool *chip_enable*
-  - bool *charge_enable*
+  - bool *charge_flag*
 
 ## Parameter
 
@@ -43,10 +43,10 @@ FrootsPi Kickerはソレノイドが接続された昇圧回路・スイッチ�
 1. キック威力を計算する
 1. キック威力の時間(数 msec)だけキック信号をONにする (STRAIGHT KICK or CHIP KICK)
 
-ノード起動時に充電許可信号をHiにしてください。
+ノード起動時に充電許可信号をONにしてください。
 ただし、rosparameterのCHARGE_OFF がTrueのときは充電許可信号を常にOFFにしてください。（デバッグモード）
 
-froots_commandのcharge_enableがTrueのとき、充電信号をONにしてください。
+froots_commandのcharge_flagがTrueのとき、充電信号をONにしてください。
 
 froots_commandのkick_flagがTrueのとき、STRAIGHT KICKをONにしてください。
 ただし、froots_commandのchip_enableがTrueのときは、CHIP KICKをONにしてください。

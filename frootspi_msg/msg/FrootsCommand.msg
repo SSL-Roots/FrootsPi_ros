@@ -8,5 +8,5 @@ int32 dribble_power
 bool kick_flag
 int32 kick_power
 bool chip_enable
-bool charge_enable
+bool charge_flag
 
