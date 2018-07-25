@@ -6,13 +6,13 @@
 
 |Button index|Key|Function|
 |:---:|:---:|:---|
-|0|A|None|
+|0|A|Kick|
 |1|B|Parameter down|
 |2|X|Parameter up|
 |3|Y|Dribble|
 |4|L|None|
 |5|R|None|
-|6|SELECT|None|
+|6|SELECT|Charge|
 |7|START|None|
 
 |Axes index|Key|Function|
