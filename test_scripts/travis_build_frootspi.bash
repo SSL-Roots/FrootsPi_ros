@@ -9,6 +9,7 @@ unzip pigpio.zip
 cd PIGPIO
 make
 sudo make install
+cd ../
 
 # Build FrootsPi
 rsync -av ./ ~/catkin_ws/src/FrootsPi
