@@ -29,6 +29,7 @@
 
     <!-- Main nodes -->
     <node name="frootspi_dribbler" pkg="frootspi_dribbler" type="dribbler_node.py" required="true" />
+    <node name="frootspi_velocity_converter" pkg="frootspi_velocity_converter" type="velocity_converter_node.py" required="true" />
     <node name="frootspi_kicker" pkg="frootspi_kicker" type="kicker_node.py" required="true" >
         <param name="charge_off" value="$(arg charge_off)" type="bool" />
         <rosparam command="load" file="$(find frootspi_core)/param/kick_power.yaml" />

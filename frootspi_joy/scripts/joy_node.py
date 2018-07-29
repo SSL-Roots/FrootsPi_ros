@@ -96,7 +96,7 @@ class Core(object):
             self.vel_omega = 0.0
         
         command.vel_norm  = self.vel_norm 
-        command.vel_theta = self.vel_theta / pi * 180
+        command.vel_theta = self.vel_theta
         command.vel_omega = self.vel_omega
         self._command = command
 
