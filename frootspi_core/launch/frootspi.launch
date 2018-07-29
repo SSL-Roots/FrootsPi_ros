@@ -10,14 +10,19 @@
             <param name="dev" type="string" value="/dev/input/js0" />
         </node>
         <node name="frootspi_joy" pkg="frootspi_joy" type="joy_node.py" >
-            <param name="button_A" value="0" type="int" />
-            <param name="button_B" value="1" type="int" />
+            <param name="button_A" value="1" type="int" />
+            <param name="button_B" value="0" type="int" />
             <param name="button_X" value="2" type="int" />
             <param name="button_Y" value="3" type="int" />
             <param name="button_L" value="4" type="int" />
             <param name="button_R" value="5" type="int" />
-            <param name="button_SEL" value="6" type="int" />
-            <param name="button_START" value="7" type="int" />
+            <param name="button_SEL" value="8" type="int" />
+            <param name="button_START" value="9" type="int" />
+            <param name="Lside_axis_X" value="0" type="int" />
+            <param name="Lside_axis_Y" value="1" type="int" />
+            <param name="Rside_axis_X" value="3" type="int" />
+            <param name="Rside_axis_Y" value="4" type="int" />
+
         </node>
     </group>
 
