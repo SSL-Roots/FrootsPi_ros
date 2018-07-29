@@ -23,7 +23,7 @@ class TestOrder(unittest.TestCase):
 
         vel_x, vel_y = order.convert_phasor2vector(command)
 
-        expected_x = 1.0
+        expected_y = 1.0
         expected_x = 0.0
 
         self.assertAlmostEqual(expected_x, vel_x)
@@ -38,9 +38,9 @@ class TestOrder(unittest.TestCase):
         vel_wheel0, vel_wheel1, vel_wheel2 = order.convert_vector_robot2wheel(
                 vel_x, vel_y, vel_omega)
 
-        expected_0 = 1
-        expected_1 = 1
-        expected_2 = 1
+        expected_0 = -0.5 * vel_x +  0.8660254 * vel_y + 70 * vel_omega
+        expected_1 = -0.5 * vel_x + -0.8660254 * vel_y + 70 * vel_omega
+        expected_2 =  1   * vel_x +  0         * vel_y + 70 * vel_omega   
 
         self.assertAlmostEqual(expected_0, vel_wheel0)
         self.assertAlmostEqual(expected_1, vel_wheel1)
@@ -55,9 +55,9 @@ class TestOrder(unittest.TestCase):
         omega_wheel0, omega_wheel1, omega_wheel2 = order.convert_velocity2omega(
                 vel_wheel0, vel_wheel1, vel_wheel2)
 
-        expected_0 = 1
-        expected_1 = 1
-        expected_2 = 1
+        expected_0 = 1 * 2.83 / 26
+        expected_1 = 1 * 2.83 / 26
+        expected_2 = 1 * 2.83 / 26
 
         self.assertAlmostEqual(expected_0, omega_wheel0)
         self.assertAlmostEqual(expected_1, omega_wheel1)
@@ -72,9 +72,9 @@ class TestOrder(unittest.TestCase):
         omega_wheel0_int, omega_wheel1_int, omega_wheel2_int = order.convert_lsb(
                 omega_wheel0, omega_wheel1, omega_wheel2)
 
-        expected_0 = 1
-        expected_1 = 1
-        expected_2 = 1
+        expected_0 = 10
+        expected_1 = 10
+        expected_2 = 10
 
         self.assertAlmostEqual(expected_0, omega_wheel0_int)
         self.assertAlmostEqual(expected_1, omega_wheel1_int)
@@ -87,7 +87,7 @@ class TestOrder(unittest.TestCase):
         order_Lside, order_Hside = order.convert_can_data(order_omega)
 
         expected_Lside = 1
-        expected_Hside = 1
+        expected_Hside = 0
 
         self.assertAlmostEqual(expected_Lside, order_Lside)
         self.assertAlmostEqual(expected_Hside, order_Hside)
