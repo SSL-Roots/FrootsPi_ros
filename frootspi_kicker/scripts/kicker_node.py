@@ -30,6 +30,8 @@ class Core(object):
         self._CHIP_KICK_POWER = rospy.get_param('~chip_kick_power')
         self._KICK_POWER_MAX = 15
 
+        self._kicking = False
+
         self._sub_command = rospy.Subscriber('froots_command', FrootsCommand,
                 self._callback_command)
 
@@ -57,15 +59,29 @@ class Core(object):
             self._pi.write(self._GPIO_CHARGING, pigpio.LOW)
 
         # kick_flagがHiになり、充電完了かつボールセンサが反応した時にキックする
+        # キックし続けないようにkickingフラグで管理する
         if command.kick_flag and \
                 self._pi.read(self._GPIO_CHARGE_DONE) == pigpio.LOW and \
                 self._pi.read(self._GPIO_BALL_SENSOR) == pigpio.LOW:
 
-            target, output_time = self._convert_kick_power(command)
+            if self._kicking is False:
+                target, output_time = self._convert_kick_power(command)
 
-            self._pi.write(target, pigpio.HIGH)
-            time.sleep(output_time)
-            self._pi.write(target, pigpio.LOW)
+                self._pi.write(target, pigpio.HIGH)
+                time.sleep(output_time)
+                self._pi.write(target, pigpio.LOW)
+                # waves = []
+                # waves.append(pigpio.pulse(1<<target, 0, output_time))
+                # waves.append(pigpio.pulse(0, 1<<target, 100000)) # 100 msec
+                # self._pi.wave_clear()
+                #
+                # self._pi.wave_add_generic(waves)
+                # wid = self._pi.wave_create()
+                # self._pi.wave_send_once(wid)
+
+            self._kicking = True
+        else:
+            self._kicking = False
 
 
     def _convert_kick_power(self, command):
@@ -81,6 +97,9 @@ class Core(object):
         if command.chip_enable:
             target = self._GPIO_CHIP
             output_time = self._CHIP_KICK_POWER[kick_power]
+
+        # pigpioのdelay timeは u secオーダー
+        # output_time *= 1000000
 
         return target, output_time
 
