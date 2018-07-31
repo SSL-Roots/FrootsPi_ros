@@ -9,6 +9,7 @@ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 
 sudo apt-get update 
 
+# Reference : https://github.com/ros-infrastructure/catkin_pkg/issues/230
 sudo apt-get -y install dpkg
 
 sudo apt-get -y install ros-indigo-ros-base
