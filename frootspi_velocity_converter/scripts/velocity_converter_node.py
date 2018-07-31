@@ -19,7 +19,7 @@ class Core(object):
         self._err_can_count = 0
         self._pi = pigpio.pi()
         self._pi.set_mode(self._GPIO_IRQ_CAN, pigpio.INPUT)
-        self._bus = can.interface.Bus(channel = 'can0', bustype='socketcan', bitrate=500000, canfilters=None)
+        self._bus = can.interface.Bus(channel = 'can0', bustype='socketcan', bitrate=1000000, canfilters=None)
         self._sub_command = rospy.Subscriber('froots_command', FrootsCommand, self._callback_command)
 
     def _callback_command(self, command):

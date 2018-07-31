@@ -95,9 +95,9 @@ class Core(object):
         else:
             self.vel_omega = 0.0
         
-        command.vel_norm  = self.vel_norm * 1000
+        command.vel_norm  = self.vel_norm
         command.vel_theta = self.vel_theta
-        command.vel_omega = self.vel_omega * 1000
+        command.vel_omega = self.vel_omega
         self._command = command
 
          

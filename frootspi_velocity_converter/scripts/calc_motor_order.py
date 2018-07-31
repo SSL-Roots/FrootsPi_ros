@@ -29,7 +29,7 @@ def convert_vector_robot2wheel(vel_X, vel_Y, vel_Omega):
 
 def convert_velocity2omega(vel_Wheel0, vel_Wheel1, vel_Wheel2):
     _ratio_gear   = 2.83
-    _radius_wheel = 26 #[mm]
+    _radius_wheel = 0.026 #[m]
     
     omega_wheel0 = _ratio_gear / _radius_wheel * vel_Wheel0
     omega_wheel1 = _ratio_gear / _radius_wheel * vel_Wheel1
