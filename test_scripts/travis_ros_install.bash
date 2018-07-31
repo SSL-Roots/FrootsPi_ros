@@ -9,7 +9,7 @@ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 
 sudo apt-get update 
 
-sudo apt-get install -y python-rosdep python-catkin-tools
+sudo apt-get -y install dpkg
 
 sudo apt-get -y install ros-indigo-ros-base
 
