@@ -67,17 +67,12 @@ class Core(object):
             if self._kicking is False:
                 target, output_time = self._convert_kick_power(command)
 
-                self._pi.write(target, pigpio.HIGH)
-                time.sleep(output_time)
-                self._pi.write(target, pigpio.LOW)
-                # waves = []
-                # waves.append(pigpio.pulse(1<<target, 0, output_time))
-                # waves.append(pigpio.pulse(0, 1<<target, 100000)) # 100 msec
-                # self._pi.wave_clear()
-                #
-                # self._pi.wave_add_generic(waves)
-                # wid = self._pi.wave_create()
-                # self._pi.wave_send_once(wid)
+                # output_timeが0であれば実行しない
+                # HIGHのあとすぐにLOWにしても僅かだが出力されてしまうため
+                if output_time:
+                    self._pi.write(target, pigpio.HIGH)
+                    time.sleep(output_time)
+                    self._pi.write(target, pigpio.LOW)
 
             self._kicking = True
         else:
